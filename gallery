@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Team - Michael's Salon</title>
+    <style>
+        /* General Gallery & Layout Styles */
+        .gallery-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            padding: 20px 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Individual image items within the gallery */
+        .gallery-item-wrapper {
+            position: relative;
+            flex: 0 0 auto;
+            margin-right: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Added for scroll-snap functionality */
+            scroll-snap-align: start;
+        }
+
+        .gallery-item-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* The main image link */
+        .gallery-link {
+            display: block;
+        }
+
+        .gallery-link img {
+            width: 250px;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Instagram icon and link */
+        .instagram-link {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 10;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            line-height: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .instagram-link:hover {
+            transform: scale(1.1);
+        }
+
+        .instagram-link img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Media query for smaller screens (e.g., phones) */
+        @media screen and (max-width: 768px) {
+            .gallery-item-wrapper img {
+                width: 150px;
+            }
+            .instagram-link {
+                bottom: 5px;
+                right: 5px;
+            }
+            .instagram-link img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Meet Our Team</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item-wrapper">
+            <a href="https://michaelssalon.com/callie" target="_blank" class="gallery-link">
+                <img src="https://img1.wsimg.com/isteam/ip/00d96f17-4a9e-4040-af25-0dd5212348e9/Adobe_Express_20250408_0838480_1%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true" alt="Callie - Staff Member at Michael's Salon">
+            </a>
+            <a href="https://www.instagram.com/the.spirited.stylist/" target="_blank" class="instagram-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
