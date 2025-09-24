@@ -75,26 +75,34 @@
 
   <div class="gallery-container">
       <div class="gallery-item-wrapper">
-          <!-- Profile image: clicking will open new tab via JS (bypasses iframe) -->
           <a href="https://michaelssalon.com/callie"
              target="_blank"
              rel="noopener noreferrer"
-             class="gallery-link"
-             onclick="window.open(this.href, '_blank'); return false;">
+             class="gallery-link">
               <img src="https://img1.wsimg.com/isteam/ip/00d96f17-4a9e-4040-af25-0dd5212348e9/Adobe_Express_20250408_0838480_1%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true"
                    alt="Callie - Staff Member at Michael's Salon">
           </a>
 
-          <!-- Instagram link: clicking will open new tab via JS (bypasses iframe) -->
           <a href="https://www.instagram.com/the.spirited.stylist/"
              target="_blank"
              rel="noopener noreferrer"
-             class="instagram-link"
-             onclick="window.open(this.href, '_blank'); return false;">
+             class="instagram-link">
               <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
           </a>
       </div>
   </div>
+
+  <!-- Global fixer script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("a[target='_blank']").forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          window.open(link.href, "_blank");
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
