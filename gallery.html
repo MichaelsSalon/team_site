@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Team - Michael's Salon</title>
   <style>
       .gallery-container {
@@ -32,6 +32,7 @@
           width: 250px;
           height: auto;
           display: block;
+          cursor: pointer;
       }
       .instagram-link {
           position: absolute;
@@ -44,6 +45,7 @@
           line-height: 0;
           box-shadow: 0 2px 4px rgba(0,0,0,0.2);
           transition: transform 0.2s ease;
+          cursor: pointer;
       }
       .instagram-link:hover {
           transform: scale(1.1);
@@ -73,15 +75,22 @@
 
   <div class="gallery-container">
       <div class="gallery-item-wrapper">
-          <a href="https://michaelssalon.com/callie" target="_blank" class="gallery-link">
-              <img src="https://img1.wsimg.com/isteam/ip/00d96f17-4a9e-4040-af25-0dd5212348e9/Adobe_Express_20250408_0838480_1%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true" alt="Callie - Staff Member at Michael's Salon">
+          <!-- Profile image: clicking will open new tab via JS (bypasses iframe) -->
+          <a href="https://michaelssalon.com/callie"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="gallery-link"
+             onclick="window.open(this.href, '_blank'); return false;">
+              <img src="https://img1.wsimg.com/isteam/ip/00d96f17-4a9e-4040-af25-0dd5212348e9/Adobe_Express_20250408_0838480_1%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true"
+                   alt="Callie - Staff Member at Michael's Salon">
           </a>
 
-          <!-- Instagram link always opens in new tab -->
+          <!-- Instagram link: clicking will open new tab via JS (bypasses iframe) -->
           <a href="https://www.instagram.com/the.spirited.stylist/"
              target="_blank"
              rel="noopener noreferrer"
-             class="instagram-link">
+             class="instagram-link"
+             onclick="window.open(this.href, '_blank'); return false;">
               <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
           </a>
       </div>
